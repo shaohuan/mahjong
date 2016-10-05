@@ -22,7 +22,6 @@ jQuery(document).ready(function() {
         //获取ID值
         var value=$(this).closest('tr').children('td:first').text();
 
-
         var selected = $(this).hasClass("highlight");
         $("#table_recharge tr").removeClass("highlight");
         if(!selected)
