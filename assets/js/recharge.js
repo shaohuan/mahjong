@@ -27,4 +27,9 @@ jQuery(document).ready(function() {
         if(!selected)
             $(this).addClass("highlight");
     });
+    
+    
+    $("#tab2 div.record_query_btn").click(function () {
+        alert('请求AJAX');
+    })
 });

@@ -240,3 +240,24 @@ td, th {
         border-bottom: 0;
     }
 }
+
+.record_query_btn {
+    background: #3498db;
+    width: 180px;
+    padding: 4px 0;
+    border-radius: 3px;
+    margin:10px auto;
+}
+.record_query_btn p {
+    font-family: 'Roboto';
+    text-align: center;
+    text-transform: uppercase;
+    color: #FFF;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+.record_query_btn:hover {
+    cursor: pointer;
+}
