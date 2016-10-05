@@ -29,16 +29,14 @@ jQuery(document).ready(function() {
             $(this).addClass("highlight");
         }
     });
-    
-    
-    $("#tab2 div.record_query_btn").click(function () {
 
-
-       var res = {
+    $('#search_user_btn').on('click',function () {
+        //查询用户
+        var res = {
             "error_code":0,
             "msg":"success",
             "user_list":[
-                    {
+                {
                     "user_id":123456,
                     "user_name":"张三",
                     "headimgurl":"http://xxxx",
@@ -68,14 +66,46 @@ jQuery(document).ready(function() {
                     "win_rounds":3,
                     "total_score":0
                 }
-             ]
+            ]
         };
 
+        loadData2UserTable("table_users",res.user_list);
+    })
+    
+    
+    $("#tab2 div.record_query_btn").click(function () {
 
         var res =         {
             "error_code":0,
             "msg":"success",
             "order_list":[
+                {
+                    "orderid":"wx0001",
+                    "uid":222,
+                    "beans":0,
+                    "fee":0,
+                    "status":0,
+                    "descrption":"xxxx",
+                    "creation_time":132
+                },
+                {
+                    "orderid":"wx0001",
+                    "uid":222,
+                    "beans":0,
+                    "fee":0,
+                    "status":0,
+                    "descrption":"xxxx",
+                    "creation_time":132
+                },
+                {
+                    "orderid":"wx0001",
+                    "uid":222,
+                    "beans":0,
+                    "fee":0,
+                    "status":0,
+                    "descrption":"xxxx",
+                    "creation_time":132
+                },
                 {
                     "orderid":"wx0001",
                     "uid":222,

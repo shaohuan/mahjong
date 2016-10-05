@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e44e87f8-3145-413f-bcee-83f4808d0f3f" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/recharge.css" afterPath="$PROJECT_DIR$/assets/css/recharge.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/recharge.js" afterPath="$PROJECT_DIR$/assets/js/recharge.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recharge.html" afterPath="$PROJECT_DIR$/recharge.html" />
     </list>
@@ -45,11 +46,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="105" column="77" selection-start-line="105" selection-start-column="77" selection-end-line="105" selection-end-column="77" />
+            <state relative-caret-position="144">
+              <caret line="75" column="33" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="33" />
               <folding>
                 <element signature="e#0#43#0" expanded="false" />
               </folding>
@@ -57,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recharge.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recharge.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recharge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="67">
-              <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
+            <state relative-caret-position="244">
+              <caret line="54" column="40" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -70,8 +71,8 @@
       <file leaf-file-name="recharge.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/css/recharge.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="82">
-              <caret line="190" column="42" selection-start-line="190" selection-start-column="42" selection-end-line="190" selection-end-column="42" />
+            <state relative-caret-position="229">
+              <caret line="278" column="15" selection-start-line="278" selection-start-column="15" selection-end-line="278" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -133,11 +134,11 @@
         <option value="$PROJECT_DIR$/assets/js/scripts.js" />
         <option value="$PROJECT_DIR$/assets/css/reset.css" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/assets/css/recharge.css" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/assets/js/index.js" />
-        <option value="$PROJECT_DIR$/recharge.html" />
+        <option value="$PROJECT_DIR$/assets/css/recharge.css" />
         <option value="$PROJECT_DIR$/assets/js/recharge.js" />
+        <option value="$PROJECT_DIR$/recharge.html" />
       </list>
     </option>
   </component>
@@ -334,12 +335,12 @@
       <updated>1475491216428</updated>
       <workItem from="1475566561188" duration="21000" />
       <workItem from="1475566591082" duration="121000" />
-      <workItem from="1475566715372" duration="25632000" />
+      <workItem from="1475566715372" duration="28489000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="25774000" />
+    <option name="totallyTimeSpent" value="28631000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1440" height="797" extended-state="0" />
@@ -539,27 +540,27 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/recharge.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="82">
-          <caret line="190" column="42" selection-start-line="190" selection-start-column="42" selection-end-line="190" selection-end-column="42" />
+        <state relative-caret-position="229">
+          <caret line="278" column="15" selection-start-line="278" selection-start-column="15" selection-end-line="278" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recharge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="244">
+          <caret line="54" column="40" selection-start-line="54" selection-start-column="24" selection-end-line="54" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="105" column="77" selection-start-line="105" selection-start-column="77" selection-end-line="105" selection-end-column="77" />
+        <state relative-caret-position="144">
+          <caret line="75" column="33" selection-start-line="75" selection-start-column="17" selection-end-line="75" selection-end-column="33" />
           <folding>
             <element signature="e#0#43#0" expanded="false" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recharge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="67">
-          <caret line="48" column="3" selection-start-line="48" selection-start-column="3" selection-end-line="48" selection-end-column="3" />
-          <folding />
         </state>
       </provider>
     </entry>

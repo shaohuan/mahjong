@@ -27,6 +27,16 @@
     </ul>
     <section id="first-tab-group" class="tabgroup">
         <div id="tab1">
+            <div class="search">
+                <select>
+                    <option value="user_id">玩家用户ID</option>
+                    <option value="wx_nick_name">微信昵称</option>
+                </select>
+                <input type="text"  >
+                <input type="button" value="搜  索" id="search_user_btn">
+            </div>
+
+
             <table class="responsive" id="table_users">
                 <thead>
                 <tr>
@@ -39,6 +49,14 @@
                 <tbody>
                 </tbody>
             </table>
+            <div class="search">
+                <label>充值柑桔数：</label><input type="text"  >
+            </div>
+            <div class="record_query_btn">
+                <p>确认充值</p>
+            </div>
+
+
         </div>
         <div id="tab2">
             <div class="record_query_btn">
@@ -54,19 +72,10 @@
                     <th scope="col">时间</th>
                     <th scope="col">充值数</th>
                     <th scope="col">余额</th>
+                    <th scope="col">时间</th>
                 </tr>
                 </thead>
                 <tbody>
-                <tr>
-                    <td data-table-header="充值ID">James</td>
-                    <td data-table-header="用户ID">James</td>
-                    <td data-table-header="昵称">James</td>
-                    <td data-table-header="时间">Matman</td>
-                    <td data-table-header="充值数">Chief Sandwich Eater</td>
-                    <td data-table-header="余额">3343</td>
-                </tr>
-
-
                 </tbody>
             </table>
         </div>

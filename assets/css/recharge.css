@@ -243,7 +243,7 @@ td, th {
 
 .record_query_btn {
     background: #3498db;
-    width: 180px;
+    width: 200px;
     padding: 4px 0;
     border-radius: 3px;
     margin:10px auto;
@@ -260,4 +260,44 @@ td, th {
 }
 .record_query_btn:hover {
     cursor: pointer;
+}
+
+.search{
+    height:30px;
+    padding: 5px !important;
+    margin:0 auto 5px;
+    text-align:center;
+}
+
+.search input,select{
+    height:20px;
+    line-height: 20px;
+}
+
+input[type=button] {
+    border:none;
+    width:40px;
+}
+
+@media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
+    select {
+        height:25px;
+        line-height:25px;
+        background:#f4f4f4;
+    }
+}
+select::-moz-focus-inner { /*Remove button padding in FF*/
+    border: 0;
+    padding: 0;
+}
+@-moz-document url-prefix() { /* targets Firefox only */
+    select {
+        padding: 15px 0!important;
+    }
+}
+@media screen\0 { /* IE Hacks: targets IE 8, 9 and 10 */
+    select {
+        height:25px;
+        line-height:25px;
+    }
 }
