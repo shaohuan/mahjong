@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e44e87f8-3145-413f-bcee-83f4808d0f3f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/mock-data.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/recharge.css" afterPath="$PROJECT_DIR$/assets/css/recharge.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/index.js" afterPath="$PROJECT_DIR$/assets/js/index.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/recharge.js" afterPath="$PROJECT_DIR$/assets/js/recharge.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recharge.html" afterPath="$PROJECT_DIR$/recharge.html" />
     </list>
@@ -27,11 +24,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="recharge.css" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recharge.css" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/assets/css/recharge.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="106" column="30" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="30" />
+            <state relative-caret-position="-189">
+              <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
               <folding />
             </state>
           </provider>
@@ -50,18 +47,18 @@
       <file leaf-file-name="recharge.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/recharge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
+            <state relative-caret-position="201">
+              <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="643">
-              <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+            <state relative-caret-position="90">
+              <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
               <folding />
             </state>
           </provider>
@@ -126,9 +123,9 @@
         <option value="$PROJECT_DIR$/assets/js/index.js" />
         <option value="$PROJECT_DIR$/assets/mockData.json" />
         <option value="$PROJECT_DIR$/assets/mock-data.js" />
-        <option value="$PROJECT_DIR$/assets/css/recharge.css" />
-        <option value="$PROJECT_DIR$/recharge.html" />
         <option value="$PROJECT_DIR$/assets/js/recharge.js" />
+        <option value="$PROJECT_DIR$/recharge.html" />
+        <option value="$PROJECT_DIR$/assets/css/recharge.css" />
       </list>
     </option>
   </component>
@@ -199,6 +196,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mahjong" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="img" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -291,12 +306,12 @@
       <workItem from="1475566561188" duration="21000" />
       <workItem from="1475566591082" duration="121000" />
       <workItem from="1475566715372" duration="35033000" />
-      <workItem from="1475661953375" duration="7840000" />
+      <workItem from="1475661953375" duration="8778000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43015000" />
+    <option name="totallyTimeSpent" value="43953000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-18" y="23" width="1440" height="797" extended-state="0" />
@@ -495,14 +510,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="319">
@@ -515,22 +522,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
           <caret line="21" column="16" selection-start-line="21" selection-start-column="16" selection-end-line="21" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/recharge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="74" column="38" selection-start-line="74" selection-start-column="38" selection-end-line="74" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/css/recharge.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="106" column="30" selection-start-line="106" selection-start-column="17" selection-end-line="106" selection-end-column="30" />
           <folding />
         </state>
       </provider>
@@ -553,8 +544,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="643">
-          <caret line="188" column="5" selection-start-line="188" selection-start-column="5" selection-end-line="188" selection-end-column="5" />
+        <state relative-caret-position="90">
+          <caret line="6" column="39" selection-start-line="6" selection-start-column="39" selection-end-line="6" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/index.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="87" column="17" selection-start-line="87" selection-start-column="17" selection-end-line="87" selection-end-column="17" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recharge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="201">
+          <caret line="20" column="50" selection-start-line="20" selection-start-column="50" selection-end-line="20" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/css/recharge.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-189">
+          <caret line="76" column="24" selection-start-line="76" selection-start-column="24" selection-end-line="76" selection-end-column="24" />
           <folding />
         </state>
       </provider>

@@ -2,9 +2,8 @@
  * Created by huan.shao on 10/4/16.
  */
 jQuery(document).ready(function() {
-
-
     function  updateUserProfile(){
+        $('#profile-img'). attr('src',localStorage.getItem("headimgurl"));
         $('#user_name').html(localStorage.getItem("user_name"));
         $('#role_name').html(localStorage.getItem("role_name")=="admin"?"超级用户":"代理用户");
         $('#doudou').html(localStorage.getItem("doudou"));

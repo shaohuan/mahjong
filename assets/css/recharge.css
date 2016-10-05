@@ -69,11 +69,15 @@ html, body { height: 100% }
 
 .profile-img {
     display: block;
-    height: 7em;
+    height: 7rem;
+    width:7rem;
     margin-right: auto;
     margin-left: auto;
     border: .5em solid #f2f2f2;
     border-radius: 100%;
+
+    line-height: 7rem;
+    text-align: center;
 }
 
 .profile-text {
