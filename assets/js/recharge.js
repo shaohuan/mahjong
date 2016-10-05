@@ -31,5 +31,33 @@ jQuery(document).ready(function() {
     
     $("#tab2 div.record_query_btn").click(function () {
         alert('请求AJAX');
-    })
+    });
+
+
+
 });
+
+
+
+function fetchData(url,type,params,onSuccess,onError){
+    $.ajax({
+        url: url,
+        contentType: 'application/json; charset=utf-8',
+        data:$.extend(params,{token:localStorage['token']}),
+        error: function(response) {
+            if (response.status != 200){
+                alert("请求出错，错误代码："+response.status)
+                return;
+            }
+            if(!!response['error_code'] && response['error_code']==10041){
+                alert("Token过期，请重新登陆!")
+                localStorage.removeItem('token');
+                window.location.href='index.html';
+            }
+
+        },
+
+        success: onSuccess,
+        type: type
+    });
+}
