@@ -6,16 +6,11 @@
     font-size: 14px;
     line-height: 24px;
 }
-h1 {
-    font-size: 20px;
+
+h2,h3{
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-}
-h1 + p {
-    text-align: center;
-    margin: 20px 0;
-    font-size: 16px;
 }
 .tabs li {
     float: left;
@@ -41,7 +36,7 @@ h1 + p {
     text-shadow: 0 1px 0 #059;
 }
 .tabgroup div {
-    padding: 30px;
+    padding: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
 .clearfix:after {
@@ -60,6 +55,13 @@ html, body { height: 100% }
 }
 
 
+
+.profile-header{
+    position: relative;
+    margin-bottom: 10px;
+    text-align:center;
+}
+
 .profile-img {
     display: block;
     height: 7em;
@@ -70,23 +72,165 @@ html, body { height: 100% }
 }
 
 .profile-text {
-    margin-top: -3.5em;
-    padding: 5em 1.5em 1.5em 1.5em;
+    /*margin-top: -3.5em;*/
+    /*padding: 5em 1.5em 1.5em 1.5em;*/
+    /*background: white;*/
+    /*border-radius: 3px;*/
+    /*box-shadow: 0 1px 2px rgba(0,0,0,0.1)*/
+    position: absolute;
+    width: 200px;
+    height: 80px;
     background: white;
-    border-radius: 3px;
-    box-shadow: 0 1px 2px rgba(0,0,0,0.1)
+    opacity:1;
+    right: 100px;
+    top: 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+
+
+.profile-header label{
+    font-size: 1.5em;
+}
+
+
+.profile-header span{
+    font-size: 1.5em;
+    margin:0px 5px;
 }
 
 .profile-name{
-    margin-right: -1em;
-    margin-bottom: .75em;
-    margin-left: -1em;
-    border-bottom: 1px solid rgba(0,0,0,0.1);
-    padding-bottom: .75em;
-    font-size: 1.5em;
-    text-transform: uppercase;
 }
 
 .profile-title {
     color: #ccc;
+}
+
+.clear-both{
+    clear:both;
+}
+
+h1 {
+    font-size: 200%;
+    font-weight: bold;
+    text-decoration: underline;
+    text-align: center;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+tr:hover {
+    background-color: #38C;
+    cursor:pointer;
+}
+
+/* Zebra striping */
+tr:nth-of-type(odd) {
+    background-color:#f7f7f7;
+}
+th {
+    background: #333;
+    color: white;
+    font-weight: bold;
+}
+td, th {
+    padding: 6px;
+    border: 1px solid #ccc;
+    text-align: left;
+}
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    table.responsive, .responsive thead, .responsive tbody, .responsive th, .responsive td, .responsive tr {
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .responsive thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .responsive tr { border: 1px solid #ccc; }
+
+    .responsive td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+
+    .responsive td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    /*
+    Label the data
+    */
+    .responsive td:before { content: attr(data-table-header); }
+}
+
+.table-responsive .bootstrap {
+    min-height: .01%;
+    overflow-x: auto;
+}
+@media screen and (max-width: 767px) {
+    .table-responsive.bootstrap {
+        width: 100%;
+        margin-bottom: 15px;
+        overflow-y: hidden;
+        -ms-overflow-style: -ms-autohiding-scrollbar;
+        border: 1px solid #ddd;
+    }
+    .table-responsive.bootstrap > .table {
+        margin-bottom: 0;
+    }
+    .table-responsive.bootstrap > .table > thead > tr > th,
+    .table-responsive.bootstrap > .table > tbody > tr > th,
+    .table-responsive.bootstrap > .table > tfoot > tr > th,
+    .table-responsive.bootstrap > .table > thead > tr > td,
+    .table-responsive.bootstrap > .table > tbody > tr > td,
+    .table-responsive.bootstrap > .table > tfoot > tr > td {
+        white-space: nowrap;
+    }
+    .table-responsive.bootstrap > .table-bordered {
+        border: 0;
+    }
+    .table-responsive.bootstrap > .table-bordered > thead > tr > th:first-child,
+    .table-responsive.bootstrap > .table-bordered > tbody > tr > th:first-child,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr > th:first-child,
+    .table-responsive.bootstrap > .table-bordered > thead > tr > td:first-child,
+    .table-responsive.bootstrap > .table-bordered > tbody > tr > td:first-child,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr > td:first-child {
+        border-left: 0;
+    }
+    .table-responsive.bootstrap > .table-bordered > thead > tr > th:last-child,
+    .table-responsive.bootstrap > .table-bordered > tbody > tr > th:last-child,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr > th:last-child,
+    .table-responsive.bootstrap > .table-bordered > thead > tr > td:last-child,
+    .table-responsive.bootstrap > .table-bordered > tbody > tr > td:last-child,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr > td:last-child {
+        border-right: 0;
+    }
+    .table-responsive.bootstrap > .table-bordered > tbody > tr:last-child > th,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr:last-child > th,
+    .table-responsive.bootstrap > .table-bordered > tbody > tr:last-child > td,
+    .table-responsive.bootstrap > .table-bordered > tfoot > tr:last-child > td {
+        border-bottom: 0;
+    }
 }
