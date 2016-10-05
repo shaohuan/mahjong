@@ -70,11 +70,12 @@ jQuery(document).ready(function() {
         };
 
         loadData2UserTable("table_users",res.user_list);
+        $("#recharge_amount").css('visibility','visible');
+
     })
     
     
     $("#tab2 div.record_query_btn").click(function () {
-
         var res =         {
             "error_code":0,
             "msg":"success",
@@ -118,8 +119,12 @@ jQuery(document).ready(function() {
             ]
         };
 
+
+
         //渲染table
-        loadData2HistoryTable("order_list",res.order_list)
+        loadData2HistoryTable("order_list",res.order_list);
+
+
     });
 
 });

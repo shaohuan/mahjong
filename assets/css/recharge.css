@@ -39,6 +39,10 @@ h2,h3{
     padding: 10px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
 }
+
+.tabgroup #tab1,#tab2{
+    min-height:400px;
+}
 .clearfix:after {
     content: "";
     display: table;
@@ -269,14 +273,33 @@ td, th {
     text-align:center;
 }
 
+.recharge_amount{
+    visibility: hidden;
+    height:60px;
+    padding: 5px !important;
+    margin:10px auto;
+    text-align:center;
+}
+
 .search input,select{
     height:20px;
     line-height: 20px;
 }
 
+.recharge_amount label{
+    font-size:1rem;
+}
+.recharge_amount input{
+    height:25px;
+    line-height: 25px;
+}
+
 input[type=button] {
     border:none;
-    width:40px;
+    width:60px;
+    background-color: blue;
+    color: #fff;
+    font-weight: 400;
 }
 
 @media screen and (-webkit-min-device-pixel-ratio:0) {  /*safari and chrome*/
