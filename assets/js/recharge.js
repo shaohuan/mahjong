@@ -32,6 +32,8 @@ jQuery(document).ready(function() {
     
     
     $("#tab2 div.record_query_btn").click(function () {
+
+
        var res = {
             "error_code":0,
             "msg":"success",
@@ -70,18 +72,52 @@ jQuery(document).ready(function() {
         };
 
 
+        var res =         {
+            "error_code":0,
+            "msg":"success",
+            "order_list":[
+                {
+                    "orderid":"wx0001",
+                    "uid":222,
+                    "beans":0,
+                    "fee":0,
+                    "status":0,
+                    "descrption":"xxxx",
+                    "creation_time":132
+                }
+            ]
+        };
+
         //渲染table
-        loadData2UserTable("table_users",res.user_list)
+        loadData2HistoryTable("order_list",res.order_list)
     });
 
 });
 
-
+//检查数组中是否包含某个元素
 function include(arr, obj) {
     for(var i=0; i<arr.length; i++) {
         if (arr[i] == obj) return true;
     }
 }
+
+function loadData2HistoryTable(tableId,data) {
+
+    var dict = {"orderid":"充值ID","uid":"用户ID","nick_name":"昵称","creation_time":"时间","fee":"充值数","beans":"余额","descrption":"描述",
+                    "status":"订单状态"};
+    var r = new Array(), j = -1, desc="";
+    for (var i=0, size=data.length; i<size; i++){
+        r[++j] ='<tr>';
+        $.each(data[i], function(key, value){
+            desc = !!dict[key]?dict[key]:"";
+            r[++j] ='<td data-table-header="' +desc+ '">';
+            r[++j] = value + '</td>';
+        });
+        r[++j] = '</tr>';
+    }
+    $('#' +tableId + " tbody").html(r.join(''));
+}
+
 
 function loadData2UserTable(tableId,data) {
     var displayCols = ['user_id','user_name','headimgurl'];
