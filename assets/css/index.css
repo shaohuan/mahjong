@@ -9,7 +9,7 @@
 
 
 body {
-    background: #999999;
+    background: #ffffff;
     font-family: 'PT Sans', Helvetica, Arial, sans-serif;
     text-align: center;
     color: #fff;
@@ -45,7 +45,7 @@ input {
     margin-top: 25px;
     padding: 0 15px;
     background: #2d2d2d; /* browsers that don't support rgba */
-    background: rgba(45,45,45,.15);
+    /*background: rgba(45,45,45,.15);*/
     -moz-border-radius: 6px;
     -webkit-border-radius: 6px;
     border-radius: 6px;
@@ -85,7 +85,7 @@ button {
     cursor: pointer;
     width: 300px;
     height: 44px;
-    margin-top: 40px;
+    margin-top: 20px;
     padding: 0;
     background: #5e9cd3;
     -moz-border-radius: 6px;
@@ -170,5 +170,17 @@ button:active {
     height:150px;
 }
 
+
+#login-error{
+    color: #ffffff;
+    background-color:red;
+    line-height: 25px;
+    height: 25px;
+    border: none;
+    width: 200px;
+    display: block;
+    margin: 10px auto 0px;
+    visibility: hidden;
+}
 
 
