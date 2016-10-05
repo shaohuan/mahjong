@@ -8,15 +8,20 @@
     <!-- CSS -->
     <link rel="stylesheet" href="assets/css/reset.css">
     <link rel="stylesheet" href="assets/css/recharge.css">
+    <script type="text/javascript">
+        if (!localStorage.token){
+            window.location.href = "index.html";
+        }
+    </script>
 </head>
 <body>
 
 <div class="wrapper">
     <div class="profile-header">
         <img src="./assets/img/avatar.png" alt="个人头像" class="profile-img">
-        <span class="name">张三</span>
-        <span class="role">管理员</span>
-        <span class="balance">123</span>
+        <span id="user_name" class="user_name">张三</span>
+        <span id="role_name" class="role_name">管理员</span>
+        <span id="doudou" class="doudou">123</span>
 
     </div>
 
@@ -28,11 +33,12 @@
     <section id="first-tab-group" class="tabgroup">
         <div id="tab1">
             <div class="search">
-                <select>
-                    <option value="user_id">玩家用户ID</option>
-                    <option value="wx_nick_name">微信昵称</option>
+                <select id="query_type">
+                    <option value="user_id">用户ID</option>
+                    <option value="user_name">用户名称</option>
+                    <option value="nick_name">微信昵称</option>
                 </select>
-                <input type="text"  >
+                <input type="text"  id="user_key" >
                 <input type="button" value="搜  索" id="search_user_btn">
             </div>
 
@@ -48,7 +54,7 @@
                 <tbody>
                 </tbody>
             </table>
-            <span class="recharge-error" id="recharge-error">第三方登录</span>
+            <span class="recharge-error" id="recharge-error"></span>
 
             <div class="recharge_amount" id="recharge_amount">
                 <label>充值柑桔数：</label><input type="text"  id="beans" >
@@ -66,6 +72,7 @@
             <div class="record_query_btn">
                 <p>确认查询</p>
             </div>
+            <span class="history-error" id="history-error">dfd</span>
 
             <table class="responsive" id="order_list">
                 <thead>
@@ -82,6 +89,7 @@
                 <tbody>
                 </tbody>
             </table>
+
         </div>
     </section>
 </div>
