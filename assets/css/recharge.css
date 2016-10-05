@@ -42,6 +42,7 @@ h2,h3{
 
 .tabgroup #tab1,#tab2{
     min-height:400px;
+    text-align: center;
 }
 .clearfix:after {
     content: "";
@@ -101,6 +102,18 @@ html, body { height: 100% }
 .profile-header span{
     font-size: 1.5em;
     margin:0px 5px;
+}
+
+#recharge-error{
+    color: #ffffff;
+    background-color:red;
+    line-height: 25px;
+    height: 25px;
+    border: none;
+    width: 160px;
+    display: block;
+    margin: 0 auto;
+    visibility: hidden;
 }
 
 .profile-name{
@@ -245,7 +258,7 @@ td, th {
     }
 }
 
-.record_query_btn {
+.record_query_btn, .confirm_recharge {
     background: #3498db;
     width: 200px;
     padding: 4px 0;
@@ -273,17 +286,29 @@ td, th {
     text-align:center;
 }
 
+
+
 .recharge_amount{
     visibility: hidden;
     height:60px;
     padding: 5px !important;
-    margin:10px auto;
+    box-shadow:none !important;
+    margin:20px auto;
     text-align:center;
 }
 
 .search input,select{
-    height:20px;
-    line-height: 20px;
+    height:25px;
+    line-height: 25px;
+    margin-right:5px;
+    border:1px solid gray;
+
+}
+
+.search #search_user_btn{
+    display:inline-block;
+    line-height: 25px;
+    height: 25px;
 }
 
 .recharge_amount label{

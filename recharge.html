@@ -17,6 +17,8 @@
         <span class="name">张三</span>
         <span class="role">管理员</span>
         <span class="balance">123</span>
+        <span class="recharge-error" id="recharge-error">第三方登录</span>
+
 
     </div>
 
@@ -36,7 +38,6 @@
                 <input type="button" value="搜  索" id="search_user_btn">
             </div>
 
-
             <table class="responsive" id="table_users">
                 <thead>
                 <tr>
@@ -51,7 +52,10 @@
             </table>
             <div class="recharge_amount" id="recharge_amount">
                 <label>充值柑桔数：</label><input type="text"  >
-                <input type="button" value="确认充值">
+                <!--<input type="button" value="确认充值">-->
+                <div class="confirm_recharge" id="confirm_recharge" >
+                    <p>确认充值</p>
+                </div>
 
 
             </div>

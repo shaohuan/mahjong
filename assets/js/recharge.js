@@ -29,6 +29,11 @@ jQuery(document).ready(function() {
             $(this).addClass("highlight");
         }
     });
+    
+    //确认充值
+    $('#confirm_recharge').on('click',function () {
+        
+    })
 
     $('#search_user_btn').on('click',function () {
         //查询用户
@@ -185,7 +190,7 @@ function fetchData(url,type,params,onSuccess,onError){
         data:$.extend(params,{token:localStorage['token']}),
         error: function(response) {
             if (response.status != 200){
-                alert("请求出错，错误代码："+response.status)
+                $('#recharge-error').html("请求出错，错误代码："+response.status).css('visibility','visible');
                 return;
             }
             if(!!response['error_code'] && response['error_code']==10041){
