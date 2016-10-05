@@ -41,7 +41,7 @@ jQuery(document).ready(function() {
     }
     
     //确认充值
-    $('#confirm_recharge').on('click',function () {
+    $('#confirm_recharge').click(function () {
         var beans = $('#beans').val();
         var selectedRow = $("#table_users tr.highlight");
         if (selectedRow.length == 0){
@@ -59,10 +59,9 @@ jQuery(document).ready(function() {
             hideRechargeErr();
         },function (msg) {
             showRechargeErr(msg);
-            
+
         });
     });
-
     $('#search_user_btn').on('click',function () {
         //查询用户
         var res = {

@@ -11,15 +11,24 @@ jQuery(document).ready(function() {
             showError("密码不能为空");
         }
 
-        $.post('/v0/account/login', { user_name: username, field2 : password},
-            function(returnedData){
-                alert('success');
-                localStorage.user = {'user_id':username,token:"xxx"};
-                console.log(returnedData);
-            }).fail(function(){
-                console.log("error");
-                localStorage.user = {'user_id':username,token:"xxx"};
-        });
+        // $.post('/v0/account/login', { user_name: username, field2 : password},
+        //     function(returnedData){
+        //         localStorage.user = {'user_id':username,token:"xxx"};
+        //         console.log(returnedData);
+        //     }).fail(function(){
+        //         console.log("error");
+        //         localStorage.user = {'user_id':username,token:"xxx"};
+        // });
+
+        // $.ajax({
+        //     url: 'some-url',
+        //     type: 'post',
+        //     dataType: 'json',
+        //     data: $('form#myForm').serialize(),
+        //     success: function(data) {
+        //         ... do something with the data...
+        //     }
+        // });
     });
 
 
