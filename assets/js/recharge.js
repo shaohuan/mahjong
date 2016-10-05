@@ -19,21 +19,49 @@ jQuery(document).ready(function() {
 
 
 
-    $("#table_users").delegate("tr", "click", function(){
-        //获取ID值
-        var value=$(this).closest('tr').children('td:first').text();
+    //选择用户的ID
 
+    $("#table_users").delegate("tr", "click", function(){
+        // var value = $(this).closest('tr').children('td:first').text();
         var selected = $(this).hasClass("highlight");
         $("#table_users tr").removeClass("highlight");
         if(!selected){
             $(this).addClass("highlight");
         }
     });
+
+
+    function showRechargeErr(msg){
+        $('#recharge-error').html(msg).css('visibility','visible');
+    }
+    
+    function hideRechargeErr() {
+        $('#recharge-error').css('visibility','hidden');
+        
+    }
     
     //确认充值
     $('#confirm_recharge').on('click',function () {
-        
-    })
+        var beans = $('#beans').val();
+        var selectedRow = $("#table_users tr.highlight");
+        if (selectedRow.length == 0){
+            showRechargeErr("请先选择一个用户");
+            return;
+        }
+
+        if (isNaN(beans) || beans.trim().length==0){
+            showRechargeErr("柑桔必须为数字");
+            return;
+        }
+
+        var user_id = selectedRow.children('td:first').text();
+        fetchData('/v0/order/create','POST',{'user_id':user_id,'beans':beans},function (res) {
+            hideRechargeErr();
+        },function (msg) {
+            showRechargeErr(msg);
+            
+        });
+    });
 
     $('#search_user_btn').on('click',function () {
         //查询用户
@@ -187,7 +215,7 @@ function fetchData(url,type,params,onSuccess,onError){
     $.ajax({
         url: url,
         contentType: 'application/json; charset=utf-8',
-        data:$.extend(params,{token:localStorage['token']}),
+        data:$.extend(params,{token:localStorage.token}),
         error: function(response) {
             if (response.status != 200){
                 $('#recharge-error').html("请求出错，错误代码："+response.status).css('visibility','visible');
