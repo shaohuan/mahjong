@@ -123,10 +123,16 @@ table {
     width: 100%;
     border-collapse: collapse;
 }
-tr:hover {
-    background-color: #38C;
-    cursor:pointer;
-}
+
+/*PC端*/
+/*tr:hover {*/
+    /*background-color: #38C;*/
+    /*cursor:pointer;*/
+/*}*/
+
+
+
+table tr.highlight {background: #38C;}
 
 /* Zebra striping */
 tr:nth-of-type(odd) {
