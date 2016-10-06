@@ -6,7 +6,7 @@ jQuery(document).ready(function() {
         var headImgUrl = localStorage.getItem("headimgurl");
         if (!!headImgUrl && (headImgUrl.match(/\.(jpeg|jpg|gif|png)$/) != null)){
             $('#profile-img'). attr('src',headimgurl);
-        }
+        };
 
         $('#user_name').html(localStorage.getItem("user_name"));
         $('#role_name').html(localStorage.getItem("role_name")=="admin"?"超级用户":"代理用户");
@@ -30,10 +30,16 @@ jQuery(document).ready(function() {
     });
 
 
-    if(!!localStorage.role_name && localStorage.role_name=="agent"){
-        $('#query_type').css('visibility','visible');
+    if("agent" == localStorage.role_name){
+        $('#query_type').append($('<option>', {
+            value: 'nick_name',
+            text: '微信昵称'
+        }));
     }else{
-        $('#query_type').css('visibility','hidden');
+        $('#query_type').append($('<option>', {
+            value: 'user_name',
+            text: '代理账号'
+        }));
     };
 
 
@@ -114,7 +120,7 @@ jQuery(document).ready(function() {
 
     //查询充值历史记录
     $("#tab2 div.record_query_btn").click(function () {
-        fetchData(' /v0/order/query','GET',{},function (res) {
+        fetchData(' /v0/order/query','GET',{"status":1},function (res) {
             //渲染table
             if (res.order_list.length == 0){
                 showErr('查询结果为空','history-error');

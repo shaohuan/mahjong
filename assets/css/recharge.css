@@ -310,7 +310,6 @@ td, th {
 }
 
 .search select{
-    visibility: hidden;
     width:80px;
 }
 
