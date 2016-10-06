@@ -39,15 +39,20 @@ jQuery(document).ready(function() {
 
         $.post('/v0/account/login', {user_name: username, password: password},
             function (res) {
+                localStorage.clear();
+                if (res.error_code == 0){
+                    updateLocalStorage(res);
+                    window.location.href = "recharge.html";
+                }else{
+                    switch (res.error_code){
+                        case 10021:
+                            showLoginErr("用户名或密码错误");
+                            break;
+                        default:
+                            showLoginErr("登陆失败!" + "  状态码："+res.error_code);
 
-                if (res.error_code != 0){
-                    showLoginErr("登陆失败!" + "  状态码："+res.error_code);
-                    return;
+                    }
                 }
-
-
-                updateLocalStorage(res);
-                window.location.href = "recharge.html";
             }).fail(function (response) {
                 showLoginErr("登陆失败!" + "  状态码："+response.status);
         });
