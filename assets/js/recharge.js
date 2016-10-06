@@ -39,7 +39,7 @@ jQuery(document).ready(function() {
 
 
     //选择用户的ID
-    $("#table_users").delegate("tr", "click", function(){
+    $("#table_users tbody").delegate("tr", "click", function(){
         // var value = $(this).closest('tr').children('td:first').text();
         var selected = $(this).hasClass("highlight");
         $("#table_users tr").removeClass("highlight");
@@ -73,7 +73,8 @@ jQuery(document).ready(function() {
 
         var user_id = selectedRow.children('td:first').text();
         fetchData('/v0/order/create','POST',{'user_id':user_id,'beans':parseInt(beans)},function (res) {
-            hideErr('recharge-error');
+            $('#beans').val("");
+            showErr("充值成功,剩余豆豆："+res.beans,'recharge-error');
         },function (msg) {
             // showErr(msg,'recharge-error');
         },'recharge-error');
@@ -92,7 +93,7 @@ jQuery(document).ready(function() {
             var userType = $("#query_type").val();
             params[userType] = searchKey;
         }else{
-            params['user_id'] = searchKey;
+            params['user_name'] = searchKey;
         }
 
 
@@ -162,7 +163,7 @@ jQuery(document).ready(function() {
             $.each(data[i], function(key, value){
                 if (key == "headimgurl"){
                     r[++j] ='<td data-table-header="' +key+ '">';
-                    r[++j] = '<img alt="头像" src="' + value + ' ></td>';
+                    r[++j] = '<img alt="头像" src="' + value + '" ></td>';
                     return true;
                 }
 
@@ -179,9 +180,15 @@ jQuery(document).ready(function() {
 
 
     function fetchData(url,type,params,onSuccess,onError,error_src){
+        var contentType;
+        if(type.toLowerCase() == 'get'){
+            contentType = 'application/json; charset=utf-8';
+        }else{
+            contentType = 'application/x-www-form-urlencoded';
+        }
         $.ajax({
             url: url,
-            contentType: 'application/json; charset=utf-8',
+            contentType: contentType,
             data:$.extend(params,{token:localStorage.token}),
             error: function(response) {
                 if (response.status != 200){
@@ -200,8 +207,8 @@ jQuery(document).ready(function() {
                 }else{
                     switch (res.error_code){
                         case 0:
-                            onSuccess(res);
                             hideErr(error_src);
+                            onSuccess(res);
                             break;
                         case 1:
                             showErr("未知的错误",error_src)
