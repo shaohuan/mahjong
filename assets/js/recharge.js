@@ -3,7 +3,11 @@
  */
 jQuery(document).ready(function() {
     function  updateUserProfile(){
-        $('#profile-img'). attr('src',localStorage.getItem("headimgurl"));
+        var headImgUrl = localStorage.getItem("headimgurl");
+        if (!!headImgUrl && (headImgUrl.match(/\.(jpeg|jpg|gif|png)$/) != null)){
+            $('#profile-img'). attr('src',headimgurl);
+        }
+
         $('#user_name').html(localStorage.getItem("user_name"));
         $('#role_name').html(localStorage.getItem("role_name")=="admin"?"超级用户":"代理用户");
         $('#doudou').html(localStorage.getItem("doudou"));
@@ -69,9 +73,9 @@ jQuery(document).ready(function() {
 
         var user_id = selectedRow.children('td:first').text();
         fetchData('/v0/order/create','POST',{'user_id':user_id,'beans':parseInt(beans)},function (res) {
-            hideErr();
+            hideErr('recharge-error');
         },function (msg) {
-            showErr(msg,'recharge-error');
+            // showErr(msg,'recharge-error');
         },'recharge-error');
     });
     $('#search_user_btn').on('click',function () {
@@ -93,12 +97,16 @@ jQuery(document).ready(function() {
 
 
         fetchData(' /v0/account/query_list','GET',params,function (res) {
-            loadData2UserTable("table_users",res.user_list);
-            $("#recharge_amount").css('visibility','visible');
-            hideErr();
+            if (res.user_list.length == 0){
+                showErr('没有找到匹配用户','recharge-error');
+            }else{
+                loadData2UserTable("table_users",res.user_list);
+                $("#recharge_amount").css('visibility','visible');
+                hideErr('recharge-error');
+            }
 
         },function (msg) {
-            showErr(msg,'recharge-error');
+            // showErr(msg,'recharge-error');
         },'recharge-error');
     });
 
@@ -107,11 +115,16 @@ jQuery(document).ready(function() {
     $("#tab2 div.record_query_btn").click(function () {
         fetchData(' /v0/order/query','GET',{},function (res) {
             //渲染table
-            loadData2HistoryTable("order_list",res.order_list);
-            $("#recharge_amount").css('visibility','visible');
-            hideErr();
+            if (res.order_list.length == 0){
+                showErr('查询结果为空','history-error');
+            }else{
+                loadData2HistoryTable("order_list",res.order_list);
+                $("#recharge_amount").css('visibility','visible');
+                hideErr('history-error');
+            }
+
         },function (msg) {
-            showErr(msg,'recharge-error');
+            // showErr(msg,'history-error');
         },'history-error');
 
     });
@@ -171,20 +184,73 @@ jQuery(document).ready(function() {
             contentType: 'application/json; charset=utf-8',
             data:$.extend(params,{token:localStorage.token}),
             error: function(response) {
-                onError();
                 if (response.status != 200){
-                    $('#'+error_src).html("请求出错，错误代码："+response.status).css('visibility','visible');
+                    showErr("请求出错，错误代码："+response.status,error_src);
+                    onError(response);
                     return;
-                }
-                if(!!response['error_code'] && response['error_code']==10041){
-                    alert("Token过期，请重新登陆!")
-                    localStorage.removeItem('token');
-                    window.location.href='index.html';
-                }
+                };
 
             },
 
-            success: onSuccess,
+            success: function (res) {
+                if(!!res['error_code'] && res['error_code']==10041){
+                    alert("Token过期，请重新登陆!")
+                    localStorage.removeItem('token');
+                    window.location.href='index.html';
+                }else{
+                    switch (res.error_code){
+                        case 0:
+                            onSuccess(res);
+                            hideErr(error_src);
+                            break;
+                        case 1:
+                            showErr("未知的错误",error_src)
+                            break;
+                        case 2:
+                            showErr("手机格式非法",error_src)
+                            break;
+                        case 3:
+                            showErr("参数为空",error_src)
+                            break;
+                        case 4:
+                            showErr("没有授权",error_src)
+                            break;
+                        case 10001:
+                            showErr("错误码验证失败",error_src)
+                            break;
+                        case 10002:
+                            showErr("昵称已经存在",error_src)
+                            break;
+                        case 10003:
+                            showErr("设置密码太短",error_src)
+                            break;
+                        case 10004:
+                            showErr("手机号码已经存在",error_src)
+                            break;
+                        case 10021:
+                            showErr("密码错误",error_src)
+                            break;
+                        case 10041:
+                            showErr("token非法",error_src)
+                            break;
+                        case 10042:
+                            showErr("验证码已发送",error_src)
+                            break;
+                        case 10043:
+                            showErr("验证码超时",error_src)
+                            break;
+                        case 10044:
+                            showErr("验证码发送失败",error_src)
+                            break;
+                        case 10045:
+                            showErr("豆豆不够",error_src)
+                            break;
+                        default:
+                            showErr("请求出错，错误码:"+res.error_code,error_src)
+                    }
+                }
+
+            },
             type: type
         });
     }
