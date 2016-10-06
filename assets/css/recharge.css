@@ -357,3 +357,9 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
         line-height:25px;
     }
 }
+
+.tb-portrait{
+    width:20px;
+    height:20px;
+    vertical-align: middle;
+}

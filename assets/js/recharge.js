@@ -109,7 +109,6 @@ jQuery(document).ready(function() {
             }
 
         },function (msg) {
-            // showErr(msg,'recharge-error');
         },'recharge-error');
     });
 
@@ -141,7 +140,7 @@ jQuery(document).ready(function() {
 
     function loadData2HistoryTable(tableId,data) {
 
-        var dict = {"orderid":"充值ID","uid":"用户ID","nick_name":"昵称","creation_time":"时间","fee":"充值数","beans":"余额","descrption":"描述",
+        var dict = {"orderid":"充值ID","op_userid":"操作人ID","user_id":"用户ID","nick_name":"昵称","left_beans":"操作人剩余豆豆","creation_time":"时间","fee":"充值数","costs":"花费金额","beans":"充值豆豆","descrption":"描述",
             "status":"订单状态"};
         var r = new Array(), j = -1, desc="";
         for (var i=0, size=data.length; i<size; i++){
@@ -158,23 +157,38 @@ jQuery(document).ready(function() {
 
 
     function loadData2UserTable(tableId,data) {
-        var displayCols = ['user_id','user_name','headimgurl'];
-        var r = new Array(), j = -1;
+        var dict = { "user_id":"用户ID",
+                    "total_score":"用户分数",
+                    "doudou":"豆豆",
+                    "sex":"性别",
+                    "win_rounds":"赢回合数",
+                    "total_rounds":"总回合数",
+                    "headimgurl":"头像",
+                    "user_name":"用户名"
+                 };
+        var r = new Array(), j = -1,desc="", gender="", portrait;
         for (var i=0, size=data.length; i<size; i++){
             r[++j] ='<tr>';
             $.each(data[i], function(key, value){
-                if (key == "headimgurl"){
-                    r[++j] ='<td data-table-header="' +key+ '">';
-                    r[++j] = '<img alt="头像" src="' + value + '" ></td>';
-                    return true;
-                }
+                desc = !!dict[key]?dict[key]:"";
 
-                if (include(displayCols,key)){
-                    r[++j] ='<td data-table-header="' +key+ '">';
+                if (key == "headimgurl"){
+                    if(value.match(/\.(jpeg|jpg|gif|png)$/) != null){
+                        portrait = value;
+                    }else{
+                        portrait = "./assets/img/portrait.png";
+                    }
+                    r[++j] ='<td data-table-header="' +desc+ '">';
+                    r[++j] = '<img alt="头像" class="tb-portrait" src="' + portrait + '" ></td>';
+                    return true;
+                }else{
+                    if ('sex' == key){
+                        value = (value == 0)?"男":"女";
+                    }
+                    r[++j] ='<td data-table-header="' +desc+ '">';
                     r[++j] = value + '</td>';
                 }
             });
-            r[++j] ='<td data-table-header="...">...</td>';
             r[++j] = '</tr>';
         }
         $('#' +tableId + " tbody").html(r.join(''));
