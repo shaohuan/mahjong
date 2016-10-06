@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e44e87f8-3145-413f-bcee-83f4808d0f3f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/facebook.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/assets/img/twitter.png" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/css/recharge.css" afterPath="$PROJECT_DIR$/assets/css/recharge.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/assets/js/recharge.js" afterPath="$PROJECT_DIR$/assets/js/recharge.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/recharge.html" afterPath="$PROJECT_DIR$/recharge.html" />
     </list>
     <ignored path="mahjong.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -45,20 +42,20 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recharge.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="recharge.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/recharge.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
+            <state relative-caret-position="300">
+              <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="recharge.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
+            <state relative-caret-position="1650">
               <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
               <folding />
             </state>
@@ -124,9 +121,9 @@
         <option value="$PROJECT_DIR$/assets/mockData.json" />
         <option value="$PROJECT_DIR$/assets/mock-data.js" />
         <option value="$PROJECT_DIR$/assets/js/index.js" />
-        <option value="$PROJECT_DIR$/recharge.html" />
         <option value="$PROJECT_DIR$/assets/css/recharge.css" />
         <option value="$PROJECT_DIR$/assets/js/recharge.js" />
+        <option value="$PROJECT_DIR$/recharge.html" />
       </list>
     </option>
   </component>
@@ -328,12 +325,12 @@
       <workItem from="1475566591082" duration="121000" />
       <workItem from="1475566715372" duration="35033000" />
       <workItem from="1475661953375" duration="22688000" />
-      <workItem from="1475735039078" duration="3425000" />
+      <workItem from="1475735039078" duration="3547000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="61288000" />
+    <option name="totallyTimeSpent" value="61410000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="55" width="1440" height="797" extended-state="0" />
@@ -604,14 +601,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/recharge.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="36" column="57" selection-start-line="36" selection-start-column="57" selection-end-line="36" selection-end-column="57" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/index.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="15">
@@ -630,8 +619,16 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/assets/js/recharge.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
+        <state relative-caret-position="1650">
           <caret line="110" column="26" selection-start-line="110" selection-start-column="26" selection-end-line="110" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/recharge.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="300">
+          <caret line="20" column="39" selection-start-line="20" selection-start-column="39" selection-end-line="20" selection-end-column="39" />
           <folding />
         </state>
       </provider>
