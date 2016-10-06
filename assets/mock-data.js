@@ -77,3 +77,19 @@ var res =         {
         }
     ]
 };
+
+
+var res = {
+    "error_code":0,
+    "token":"abdgfsjfds",
+    "msg":"success",
+    "user_id":123456,
+    "user_name":"张三",
+    "headimgurl":"http://xxxx",
+    "sex":1,
+    "doudou":10,
+    "total_rounds":10,
+    "role_name":"admin",
+    "win_rounds":3,
+    "total_score":0
+};

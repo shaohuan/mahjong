@@ -39,20 +39,6 @@ jQuery(document).ready(function() {
 
         $.post('/v0/account/login', {user_name: username, password: password},
             function (res) {
-                var res = {
-                    "error_code":0,
-                    "token":"abdgfsjfds",
-                    "msg":"success",
-                    "user_id":123456,
-                    "user_name":"张三",
-                    "headimgurl":"http://xxxx",
-                    "sex":1,
-                    "doudou":10,
-                    "total_rounds":10,
-                    "role_name":"admin",
-                    "win_rounds":3,
-                    "total_score":0
-                };
 
                 if (res.error_code != 0){
                     showLoginErr("登陆失败!" + "  状态码："+res.error_code);
@@ -64,23 +50,6 @@ jQuery(document).ready(function() {
                 window.location.href = "recharge.html";
             }).fail(function (response) {
                 showLoginErr("登陆失败!" + "  状态码："+response.status);
-
-
-            //测试代码
-            updateLocalStorage({
-                "error_code":0,
-                "token":"abdgfsjfds",
-                "msg":"success",
-                "user_id":123456,
-                "user_name":"张三",
-                "headimgurl":"http://xxxx",
-                "sex":1,
-                "doudou":10,
-                "total_rounds":10,
-                "role_name":"agent",
-                "win_rounds":3,
-                "total_score":0
-            });
         });
     });
     function showLoginErr(msg) {

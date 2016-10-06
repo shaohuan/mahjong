@@ -87,7 +87,9 @@ jQuery(document).ready(function() {
         if (role_name == 'agent'){
             var userType = $("#query_type").val();
             params[userType] = searchKey;
-        };
+        }else{
+            params['user_id'] = searchKey;
+        }
 
 
         fetchData(' /v0/account/query_list','GET',params,function (res) {
