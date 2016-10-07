@@ -17,26 +17,6 @@ jQuery(document).ready(function() {
             console.log(json);
         }
 
-
-        // $.ajax({
-        //     url: "http://114.55.148.214:8000/login",
-        //
-        //     jsonp: "callback",
-        //
-        //     dataType: "jsonp",
-        //
-        //     data: {
-        //         user_name:username,
-        //         password: password
-        //     },
-        //
-        //     success: function( response ) {
-        //         console.log( response ); // server response
-        //     }
-        // });
-        //
-        // return;
-
         $.post('/v0/account/login', {user_name: username, password: password},
             function (res) {
                 localStorage.clear();
