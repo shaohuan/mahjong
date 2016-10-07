@@ -73,14 +73,14 @@ jQuery(document).ready(function() {
         }
 
         if (isNaN(beans) || beans.trim().length==0){
-            showErr("柑桔必须为数字","recharge-error");
+            showErr("桔子必须为数字","recharge-error");
             return;
         }
 
         var user_id = selectedRow.children('td:first').text();
         fetchData('/v0/order/create','POST',{'user_id':user_id,'beans':parseInt(beans)},function (res) {
             $('#beans').val("");
-            showErr("充值成功,剩余豆豆："+res.beans,'recharge-error');
+            showErr("充值成功,剩余桔子："+res.beans,'recharge-error');
         },function (msg) {
             // showErr(msg,'recharge-error');
         },'recharge-error');
@@ -109,6 +109,7 @@ jQuery(document).ready(function() {
             }
 
         },function (msg) {
+
         },'recharge-error');
     });
 
@@ -127,6 +128,8 @@ jQuery(document).ready(function() {
 
         },function (msg) {
             // showErr(msg,'history-error');
+
+
         },'history-error');
 
     });
@@ -140,10 +143,23 @@ jQuery(document).ready(function() {
 
     function loadData2HistoryTable(tableId,data) {
 
-        var dict = {"orderid":"充值ID","op_userid":"操作人ID","user_id":"用户ID","nick_name":"昵称","left_beans":"操作人剩余豆豆","creation_time":"时间","fee":"充值数","costs":"花费金额","beans":"充值豆豆","descrption":"描述",
+        var dict = {"orderid":"充值ID","op_userid":"操作人ID","user_id":"用户ID","nick_name":"昵称","left_beans":"操作人剩余桔子","creation_time":"时间","fee":"充值数","costs":"花费金额","beans":"充值桔子","descrption":"描述",
             "status":"订单状态"};
         var r = new Array(), j = -1, desc="";
-        for (var i=0, size=data.length; i<size; i++){
+
+        //动态构建table header
+        var header = data[0];
+        r[++j] = '<thead><tr>';
+        for (var en_title in header){
+            desc = !!dict[en_title]?dict[en_title]:en_title;
+            r[++j] = '<th scope="col">'+desc+'</th>';
+        }
+        r[++j] = '</tr></thead>';
+
+
+        //动态构建table body
+        r[++j] = '<tbody>';
+        for (i=0, size=data.length; i<size; i++){
             r[++j] ='<tr>';
             $.each(data[i], function(key, value){
                 desc = !!dict[key]?dict[key]:"";
@@ -152,14 +168,16 @@ jQuery(document).ready(function() {
             });
             r[++j] = '</tr>';
         }
-        $('#' +tableId + " tbody").html(r.join(''));
+        r[++j] = '</tbody>';
+
+        $('#' +tableId).html(r.join(''));
     }
 
 
     function loadData2UserTable(tableId,data) {
         var dict = { "user_id":"用户ID",
                     "total_score":"用户分数",
-                    "doudou":"豆豆",
+                    "doudou":"桔子",
                     "sex":"性别",
                     "win_rounds":"赢回合数",
                     "total_rounds":"总回合数",
@@ -167,6 +185,19 @@ jQuery(document).ready(function() {
                     "user_name":"用户名"
                  };
         var r = new Array(), j = -1,desc="", gender="", portrait;
+
+
+        //动态构建table header
+        var header = data[0];
+        r[++j] = '<thead><tr>';
+        for (var en_title in header){
+            desc = !!dict[en_title]?dict[en_title]:en_title;
+            r[++j] = '<th scope="col">'+desc+'</th>';
+        }
+        r[++j] = '</tr></thead>';
+
+        //动态构建tbody
+        r[++j] = '<tbody>';
         for (var i=0, size=data.length; i<size; i++){
             r[++j] ='<tr>';
             $.each(data[i], function(key, value){
@@ -191,7 +222,9 @@ jQuery(document).ready(function() {
             });
             r[++j] = '</tr>';
         }
-        $('#' +tableId + " tbody").html(r.join(''));
+        r[++j] = '</tbody>';
+
+        $('#' +tableId).html(r.join(''));
     }
 
 
@@ -266,7 +299,7 @@ jQuery(document).ready(function() {
                             showErr("验证码发送失败",error_src)
                             break;
                         case 10045:
-                            showErr("豆豆不够",error_src)
+                            showErr("桔子不够",error_src)
                             break;
                         default:
                             showErr("请求出错，错误码:"+res.error_code,error_src)

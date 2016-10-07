@@ -85,7 +85,7 @@ jQuery(document).ready(function() {
                             showLoginErr("验证码发送失败");
                             break;
                         case 10045:
-                            showLoginErr("豆豆不够");
+                            showLoginErr("桔子不够");
                             break;
                         default:
                             showLoginErr("登陆失败!" + "  状态码："+res.error_code);

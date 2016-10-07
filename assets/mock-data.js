@@ -41,39 +41,36 @@ var res =         {
     "order_list":[
         {
             "orderid":"wx0001",
-            "uid":222,
+            "op_userid":444,
             "beans":0,
             "fee":0,
             "status":0,
             "descrption":"xxxx",
-            "creation_time":132
+            "creation_time":132,
+            'user_id':1343,
+            'nick_name':'昵称'
         },
         {
             "orderid":"wx0001",
-            "uid":222,
+            "op_userid":444,
             "beans":0,
             "fee":0,
             "status":0,
             "descrption":"xxxx",
-            "creation_time":132
+            "creation_time":132,
+            'user_id':1343,
+            'nick_name':'昵称'
         },
         {
             "orderid":"wx0001",
-            "uid":222,
+            "op_userid":444,
             "beans":0,
             "fee":0,
             "status":0,
             "descrption":"xxxx",
-            "creation_time":132
-        },
-        {
-            "orderid":"wx0001",
-            "uid":222,
-            "beans":0,
-            "fee":0,
-            "status":0,
-            "descrption":"xxxx",
-            "creation_time":132
+            "creation_time":132,
+            'user_id':1343,
+            'nick_name':'昵称'
         }
     ]
 };
