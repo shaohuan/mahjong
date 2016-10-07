@@ -73,21 +73,20 @@ jQuery(document).ready(function() {
         }
 
         if (isNaN(beans) || beans.trim().length==0){
-            showErr("桔子必须为数字","recharge-error");
+            showErr("柑子必须为数字","recharge-error");
             return;
         }
 
         var user_id = selectedRow.children('td:first').text();
         fetchData('/v0/order/create','POST',{'user_id':user_id,'beans':parseInt(beans)},function (res) {
             $('#beans').val("");
-            showErr("充值成功,剩余桔子："+res.beans,'recharge-error');
+            showErr("充值成功,剩余柑子："+res.beans,'recharge-error');
         },function (msg) {
             // showErr(msg,'recharge-error');
         },'recharge-error');
     });
     $('#search_user_btn').on('click',function () {
         //查询用户
-
         var role_name = localStorage.getItem('role_name');
         var params = {},searchKey = $('#user_key').val();
         if (searchKey.trim().length == 0){
@@ -109,7 +108,6 @@ jQuery(document).ready(function() {
             }
 
         },function (msg) {
-
         },'recharge-error');
     });
 
@@ -143,7 +141,7 @@ jQuery(document).ready(function() {
 
     function loadData2HistoryTable(tableId,data) {
 
-        var dict = {"orderid":"充值ID","op_userid":"操作人ID","user_id":"用户ID","nick_name":"昵称","left_beans":"操作人剩余桔子","creation_time":"时间","fee":"充值数","costs":"花费金额","beans":"充值桔子","descrption":"描述",
+        var dict = {"orderid":"充值ID","op_userid":"操作人ID","user_id":"用户ID","nick_name":"昵称","left_beans":"操作人剩余柑子","creation_time":"时间","fee":"充值数","costs":"花费金额","beans":"充值柑子","descrption":"描述",
             "status":"订单状态"};
         var r = new Array(), j = -1, desc="";
 
@@ -177,7 +175,7 @@ jQuery(document).ready(function() {
     function loadData2UserTable(tableId,data) {
         var dict = { "user_id":"用户ID",
                     "total_score":"用户分数",
-                    "doudou":"桔子",
+                    "doudou":"柑子",
                     "sex":"性别",
                     "win_rounds":"赢回合数",
                     "total_rounds":"总回合数",
@@ -207,14 +205,14 @@ jQuery(document).ready(function() {
                     if(value.match(/\.(jpeg|jpg|gif|png)$/) != null){
                         portrait = value;
                     }else{
-                        portrait = "./assets/img/portrait.png";
+                        portrait = "./assets/img/thumbnail.png";
                     }
                     r[++j] ='<td data-table-header="' +desc+ '">';
                     r[++j] = '<img alt="头像" class="tb-portrait" src="' + portrait + '" ></td>';
                     return true;
                 }else{
                     if ('sex' == key){
-                        value = (value == 0)?"男":"女";
+                        value = (value == 1)?"男":"女";
                     }
                     r[++j] ='<td data-table-header="' +desc+ '">';
                     r[++j] = value + '</td>';
@@ -299,7 +297,7 @@ jQuery(document).ready(function() {
                             showErr("验证码发送失败",error_src)
                             break;
                         case 10045:
-                            showErr("桔子不够",error_src)
+                            showErr("柑子不够",error_src)
                             break;
                         default:
                             showErr("请求出错，错误码:"+res.error_code,error_src)
