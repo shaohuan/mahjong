@@ -330,7 +330,7 @@ td, th {
 input[type=button] {
     border:none;
     width:60px;
-    background-color: blue;
+    background-color: #38c;
     color: #fff;
     font-weight: 400;
 }
@@ -362,4 +362,49 @@ select::-moz-focus-inner { /*Remove button padding in FF*/
     width:25px;
     height:25px;
     vertical-align: middle;
+}
+
+.user-stuff {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+    align-items: center;
+}
+
+.user-stuff>.button, .user-stuff>.file-upload-button {
+    -webkit-align-self: center;
+    -ms-flex-item-align: center;
+    align-self: center;
+}
+
+
+.logout-button{
+    font-family: "Lato", "Lucida Grande","Lucida Sans Unicode", Tahoma, Sans-Serif;
+    -webkit-appearance: none;
+    font-size: 1rem;
+    text-shadow: none;
+    line-height: 1.2;
+    display: inline-block;
+    border: 0;
+    outline: 0;
+    padding: 5px;
+    margin: 10px;
+    position: relative;
+    border-radius: 3px;
+    border: 3px solid transparent;
+    color: white;
+    cursor: pointer;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    text-decoration: none !important;
+    cursor: pointer;
+    text-align: center;
+    font-weight: normal !important;
+    background: #afc7dc;
+    color: white;
 }
